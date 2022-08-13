@@ -64,7 +64,7 @@ export default function index({ navigation }) {
                 <ScrollView>
                     <View>
                         <View style={{ position: 'absolute', right: 10, top: 10, flexDirection: 'row', zIndex: 99999, }}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Dashboard")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Transaction")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
                                 <Image source={require('../../Assets/Image/invoice.png')} style={{ width: 40, height: 40, marginRight: 10 }} />
                                 <Text style={{ fontSize: 17, fontWeight: '600' }}>Sale Invoice</Text>
                             </TouchableOpacity>

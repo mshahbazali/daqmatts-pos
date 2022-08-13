@@ -29,7 +29,7 @@ export default function index({ navigation }) {
                     <View>
                         <View style={{ flexDirection: 'row', marginVertical: 13, marginHorizontal: 18, justifyContent: 'space-between', alignItems: 'center', }}>
                             <View style={{ width: "10%" }}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Dashboard")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                <TouchableOpacity onPress={() => navigation.navigate("RCP")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                     <AntDesign name="left" size={25} color="black" style={{ marginRight: 5 }} />
                                     <Text style={{ fontSize: 22, fontWeight: '600' }}>Back</Text>
                                 </TouchableOpacity>
@@ -44,7 +44,7 @@ export default function index({ navigation }) {
                                 <Text style={{ fontSize: 20, fontWeight: '600', marginRight: 10 }}>Items Selected</Text>
                                 <Text style={{ fontSize: 23, fontWeight: '800', paddingVertical: 5, paddingHorizontal: 12, borderRadius: 10, borderWidth: 2, borderColor: '#000' }}>4</Text>
                             </View>
-                            <TouchableOpacity style={{ width: "10%", backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Reports")} style={{ width: "10%", backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                 <Text style={{ fontSize: 22, fontWeight: '600' }}>Next</Text>
                                 <AntDesign name="right" size={25} color="black" style={{ marginLeft: 5 }} />
                             </TouchableOpacity>

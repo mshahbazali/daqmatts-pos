@@ -29,7 +29,7 @@ export default function index({ navigation }) {
                     <View>
                         <View style={{ flexDirection: 'row', paddingVertical: 13, paddingHorizontal: 18, justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#1EE9F6' }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', }}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Dashboard")}>
+                                <TouchableOpacity  onPress={() => navigation.navigate("Dashboard")}>
                                     <AntDesign name="arrowleft" size={32} color="black" style={{ marginHorizontal: 10 }} />
                                 </TouchableOpacity>
                                 <TouchableOpacity style={{ backgroundColor: "#F0F1C4", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
@@ -48,6 +48,9 @@ export default function index({ navigation }) {
                                     <Text style={{ fontSize: 22, fontWeight: '600' }}>21,087.00</Text>
                                 </TouchableOpacity>
                             </View>
+                            <TouchableOpacity onPress={() => navigation.navigate("Remitance")} style={{ backgroundColor: "#F0F1C4", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                <Text style={{ fontSize: 22, fontWeight: '600' }}>Next</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ width: '100%', marginTop: 10 }}>
