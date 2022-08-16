@@ -18,19 +18,19 @@ export default function index({ navigation }) {
                         <Image source={require("../../Assets/Image/logo.png")} style={{ width: 150, height: 80 }} />
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("Dashboard")}>
+                        <TouchableOpacity style={styles.menuBox} >
                             <AntDesign name="home" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Dashboard</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("RCP")}>
+                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("Dashboard")}>
                             <AntDesign name="enviroment" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>RCP</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer} >
-                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("Transaction")}>
+                        <TouchableOpacity style={styles.menuBox} >
                             <AntDesign name="calculator" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Transaction</Text>
                         </TouchableOpacity>
@@ -42,7 +42,7 @@ export default function index({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("Remitance")}>
+                        <TouchableOpacity style={styles.menuBox}>
                             <Entypo name="credit" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Remitance</Text>
                         </TouchableOpacity>
@@ -60,7 +60,7 @@ export default function index({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("Reports")}>
+                        <TouchableOpacity style={styles.menuBox}>
                             <FontAwesome name="bar-chart-o" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Reports</Text>
                         </TouchableOpacity>
