@@ -22,6 +22,8 @@ export default function index({ navigation }) {
         },
     ]
     const [modalVisible, setModalVisible] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState()
+
     return (
         <View style={styles.container}>
             <View style={{ width: '100%', }}>
@@ -92,38 +94,82 @@ export default function index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <View style={styles.tableBodyContainer}>
-                                                <View style={styles.tableBoxFirst}>
+                                            <TouchableOpacity onPress={() => setSelectedIndex()} onLongPress={() => setSelectedIndex(i)} style={styles.tableBodyContainer}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '10%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.itemCode}</Text>
                                                     </View>
                                                 </View>
-                                                <View style={styles.tableBoxSecond}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '13%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.tagName}</Text>
                                                     </View>
                                                 </View>
-                                                <View style={styles.tableBoxThird}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '30%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.description}</Text>
                                                     </View>
                                                 </View>
-                                                <View style={styles.tableBoxFour}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '15%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.brand}</Text>
                                                     </View>
                                                 </View>
-                                                <View style={styles.tableBoxFive}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '15%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.uom}</Text>
                                                     </View>
                                                 </View>
-                                                <View style={styles.tableBoxSix}>
+                                                <View style={{
+                                                    borderWidth: 1,
+                                                    borderColor: "grey",
+                                                    borderTopWidth: 0,
+                                                    width: '15%',
+                                                    paddingVertical: 10,
+                                                    backgroundColor: selectedIndex == i ? 'yellow' : 'white'
+                                                }}>
                                                     <View style={styles.tableBody}>
                                                         <Text style={styles.tableBodyText}>{e.qty}</Text>
                                                     </View>
                                                 </View>
-                                            </View>
+                                            </TouchableOpacity>
                                         )
 
                                     })
