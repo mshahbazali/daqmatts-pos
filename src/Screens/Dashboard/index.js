@@ -18,7 +18,7 @@ export default function index({ navigation }) {
                         <Image source={require("../../Assets/Image/logo.png")} style={{ width: 150, height: 80 }} />
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox} >
+                        <TouchableOpacity style={styles.menuBox}>
                             <AntDesign name="home" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Dashboard</Text>
                         </TouchableOpacity>
@@ -30,7 +30,9 @@ export default function index({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer} >
-                        <TouchableOpacity style={styles.menuBox} >
+
+                        <TouchableOpacity style={styles.menuBox}>
+
                             <AntDesign name="calculator" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Transaction</Text>
                         </TouchableOpacity>
@@ -60,7 +62,8 @@ export default function index({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menuBox}>
+
+                        <TouchableOpacity style={styles.menuBox} >
                             <FontAwesome name="bar-chart-o" size={30} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Reports</Text>
                         </TouchableOpacity>
@@ -221,13 +224,16 @@ export default function index({ navigation }) {
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/invoice.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Sales Invoice</Text>
+                                    <TouchableOpacity onPress={() => {
+                                        setModalVisible(!modalVisible)
+                                        navigation.navigate("RCP")
+                                    }} style={{ width: 150, backgroundColor: "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                        <Text style={{ fontSize: 22, textAlign: 'center' }}>Sales Invoice</Text>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/collection.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
                                         <Text style={{ fontSize: 20, textAlign: 'center' }}>Collection</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -235,13 +241,13 @@ export default function index({ navigation }) {
                             <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/replacement.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
                                         <Text style={{ fontSize: 20, textAlign: 'center' }}>Stock Replacement</Text>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/return.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
                                         <Text style={{ fontSize: 20, textAlign: 'center' }}>Sales Return</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -249,13 +255,13 @@ export default function index({ navigation }) {
                             <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/free.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
                                         <Text style={{ fontSize: 20, textAlign: 'center' }}>Free of Charge</Text>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
                                     <Image source={require('../../Assets/Image/non.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
+                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
                                         <Text style={{ fontSize: 20, textAlign: 'center' }}>Non Productive</Text>
                                     </TouchableOpacity>
                                 </View>

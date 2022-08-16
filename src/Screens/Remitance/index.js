@@ -46,6 +46,10 @@ export default function index({ navigation }) {
         },
     ]
     const [modalVisible, setModalVisible] = useState(false);
+    const [cashContainer, setCashContainer] = useState(true)
+    const [checkContainer, setCheckContainer] = useState(false)
+    const [walletContainer, setWalletContainer] = useState(false)
+    const [splitContainer, setSplitContainer] = useState(false)
     return (
         <View style={styles.container}>
             <View style={{ width: '100%', }}>
@@ -53,7 +57,7 @@ export default function index({ navigation }) {
                     <View>
                         <View style={{ flexDirection: 'row', paddingVertical: 13, paddingHorizontal: 18, justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#1EE9F6' }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', }}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Dashboard")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                <TouchableOpacity onPress={() => navigation.navigate("Reports")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                     <AntDesign name="arrowleft" size={32} color="black" style={{ marginHorizontal: 10 }} />
                                     <Text style={{ fontSize: 22, fontWeight: '600' }}>Order Details</Text>
                                 </TouchableOpacity>
@@ -151,30 +155,142 @@ export default function index({ navigation }) {
                                     </View>
                                     <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: "space-between" }}>
                                         <View style={{ marginTop: 15, width: '40%' }}>
-                                            <TouchableOpacity style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
-                                                <Text style={{ fontSize: 15, fontWeight: '600' }}>SYNC</Text>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    setCashContainer(true)
+                                                    setCheckContainer(false)
+                                                    setWalletContainer(false)
+                                                    setSplitContainer(false)
+                                                }}
+                                                style={{ backgroundColor: cashContainer == true ? '#fa9bd6' : '#82C5EF', padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: '600' }}>Cash</Text>
                                             </TouchableOpacity>
-                                            <TouchableOpacity style={{ backgroundColor: "yellow", padding: 10, marginTop: 15, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
-                                                <Text style={{ fontSize: 15, fontWeight: '600' }}>SYNC</Text>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    setCashContainer(false)
+                                                    setCheckContainer(false)
+                                                    setWalletContainer(true)
+                                                    setSplitContainer(false)
+                                                }}
+                                                style={{ backgroundColor: walletContainer == true ? '#fa9bd6' : '#82C5EF', padding: 10, borderRadius: 10, marginTop: 15, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: '600' }}>eWallet</Text>
                                             </TouchableOpacity>
                                         </View>
                                         <View style={{ marginTop: 15, width: '40%' }}>
-                                            <TouchableOpacity style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
-                                                <Text style={{ fontSize: 15, fontWeight: '600' }}>SYNC</Text>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    setCashContainer(false)
+                                                    setCheckContainer(true)
+                                                    setWalletContainer(false)
+                                                    setSplitContainer(false)
+                                                }} style={{ backgroundColor: checkContainer == true ? '#fa9bd6' : '#82C5EF', padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: '600' }}>Check</Text>
                                             </TouchableOpacity>
-                                            <TouchableOpacity style={{ backgroundColor: "yellow", padding: 10, marginTop: 15, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
-                                                <Text style={{ fontSize: 15, fontWeight: '600' }}>SYNC</Text>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    setCashContainer(false)
+                                                    setCheckContainer(false)
+                                                    setWalletContainer(false)
+                                                    setSplitContainer(true)
+                                                }}
+                                                style={{ backgroundColor: splitContainer == true ? '#fa9bd6' : '#82C5EF', padding: 10, marginTop: 15, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: '600' }}>SPLIT</Text>
                                             </TouchableOpacity>
                                         </View>
                                     </View>
 
-                                    <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
-                                        <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                            <Text style={{ fontSize: 14, fontWeight: '600' }}>CASH</Text>
-                                        </TouchableOpacity>
-                                        <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
-                                        <Text style={{ color: 'red', fontSize: 24, fontWeight: '600', marginTop: 10, borderBottomColor: '#000', borderBottomWidth: 1.5, paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
-                                    </View>
+
+                                    {/* Cash Container  */}
+                                    {
+                                        cashContainer == true ?
+                                            <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
+                                                <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
+                                                    <Text style={{ fontSize: 14, fontWeight: '600' }}>CASH</Text>
+                                                </TouchableOpacity>
+                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
+                                                <Text style={{ color: 'red', fontSize: 24, fontWeight: '600', marginTop: 10, borderBottomColor: '#000', borderBottomWidth: 1.5, paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
+                                            </View>
+                                            :
+                                            // Check Container 
+                                            checkContainer == true ?
+                                                <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
+                                                    <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
+                                                        <Text style={{ fontSize: 14, fontWeight: '600' }}>CHECK</Text>
+                                                    </TouchableOpacity>
+                                                    <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Bank & Branch</Text>
+                                                    <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>PNB-Subangdaku</Text>
+                                                    <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Check No.</Text>
+                                                    <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>12354853</Text>
+                                                    <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Check Date</Text>
+                                                    <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>06/24/2022</Text>
+                                                    <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
+                                                    <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
+                                                </View>
+                                                :
+                                                // EWallet Conatiner 
+                                                walletContainer == true ?
+                                                    <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
+                                                        <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
+                                                            <Text style={{ fontSize: 14, fontWeight: '600' }}>eWallet</Text>
+                                                        </TouchableOpacity>
+                                                        <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Wallet Name</Text>
+                                                        <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>GCASH</Text>
+                                                        <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Reference No.</Text>
+                                                        <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>G5254278413145</Text>
+                                                        <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
+                                                        <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
+                                                    </View>
+                                                    :
+                                                    // Split Container 
+                                                    <View>
+                                                        <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 40, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
+                                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
+                                                                <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
+                                                                    <Text style={{ fontSize: 14, fontWeight: '600' }}>Split</Text>
+                                                                </TouchableOpacity>
+                                                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                                                                    <TouchableOpacity>
+                                                                        <AntDesign name="pluscircleo" size={24} color="black" />
+                                                                    </TouchableOpacity>
+                                                                    <View>
+                                                                        <Text style={{ marginHorizontal: 15, fontSize: 18, fontWeight: '600', color: '#000', textAlign: 'center' }}>4</Text>
+                                                                        <Text style={{ marginHorizontal: 15, fontSize: 18, fontWeight: '600', color: '#000', textAlign: 'center' }}>Payment</Text>
+                                                                    </View>
+                                                                    <TouchableOpacity>
+                                                                        <AntDesign name="minuscircleo" size={24} color="black" />
+                                                                    </TouchableOpacity>
+                                                                </View>
+                                                            </View>
+                                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+                                                                <AntDesign name="delete" size={24} color="black" />
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>Cash</Text>
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>10,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                            </View>
+                                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+                                                                <AntDesign name="delete" size={24} color="black" />
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>Check</Text>
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                            </View>
+                                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+                                                                <AntDesign name="delete" size={24} color="black" />
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>eWallet</Text>
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                            </View>
+                                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+                                                                <AntDesign name="delete" size={24} color="black" />
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>eWallet</Text>
+                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', width: '30%', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                            </View>
+                                                        </View>
+                                                        <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
+                                                    </View>
+                                    }
+
+
                                     <View style={{ backgroundColor: "#000", paddingVertical: 6, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 40 }}>
                                         <Text style={{ fontSize: 22, color: "#fff", fontWeight: '400', textAlign: 'center' }}>Credits & Points</Text>
                                     </View>
@@ -233,8 +349,8 @@ export default function index({ navigation }) {
                         </View>
                     </View>
                 </Modal>
-            </View>
-        </View>
+            </View >
+        </View >
     )
 }
 
