@@ -170,115 +170,117 @@ export default function index({ navigation }) {
                     transparent={true}
                     visible={modalVisible}
                 >
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'red', paddingHorizontal: 16, paddingVertical: 15 }}>
-                                <View style={{ marginRight: 150 }}>
-                                    <Text style={{ color: '#fff', fontSize: 20, fontWeight: '500' }}>CNHDM1K</Text>
-                                    <Text style={{ color: '#fff', fontSize: 20, fontWeight: '500' }}>Champion Hotdog Mini 1Kg</Text>
+                    <ScrollView>
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'red', paddingHorizontal: 16, paddingVertical: 15 }}>
+                                    <View style={{ marginRight: 150 }}>
+                                        <Text style={{ color: '#fff', fontSize: 20, fontWeight: '500' }}>CNHDM1K</Text>
+                                        <Text style={{ color: '#fff', fontSize: 20, fontWeight: '500' }}>Champion Hotdog Mini 1Kg</Text>
+                                    </View>
+                                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                                        <AntDesign name="closecircleo" size={30} color="#fff" />
+                                    </TouchableOpacity>
                                 </View>
-                                <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                                    <AntDesign name="closecircleo" size={30} color="#fff" />
-                                </TouchableOpacity>
-                            </View>
-                            <View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginTop: 20, marginBottom: 10, marginHorizontal: 15 }}>
-                                    <Text style={{ color: '#000', fontSize: 20, fontWeight: '500', marginRight: 12 }}>Available</Text>
-                                    <Text style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 13, backgroundColor: '#D9D9D9', borderRadius: 30 }}>372 PACK</Text>
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                                        <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 12 }}>PriceList</Text>
-                                        <View style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 17, backgroundColor: '#D9D9D9', borderRadius: 30 }}>
-                                            <SelectDropdown
-                                                data={["DS Visayas"]}
-                                                defaultButtonText={"DS Visayas"}
-                                                onSelect={(selectedItem, index) => {
-                                                    console.log(selectedItem, index)
-                                                }}
-                                                buttonTextAfterSelection={(selectedItem, index) => {
-                                                    // text represented after item is selected
-                                                    // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                                    return selectedItem
-                                                }}
-                                                rowTextForSelection={(item, index) => {
-                                                    // text represented for each item in dropdown
-                                                    // if data array is an array of objects then return item.property to represent item in dropdown
-                                                    return item
-                                                }}
-                                            />
+                                <View>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginTop: 20, marginBottom: 10, marginHorizontal: 15 }}>
+                                        <Text style={{ color: '#000', fontSize: 20, fontWeight: '500', marginRight: 12 }}>Available</Text>
+                                        <Text style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 13, backgroundColor: '#D9D9D9', borderRadius: 30 }}>372 PACK</Text>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                                            <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 12 }}>PriceList</Text>
+                                            <View style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 17, backgroundColor: '#D9D9D9', borderRadius: 30 }}>
+                                                <SelectDropdown
+                                                    data={["DS Visayas"]}
+                                                    defaultButtonText={"DS Visayas"}
+                                                    onSelect={(selectedItem, index) => {
+                                                        console.log(selectedItem, index)
+                                                    }}
+                                                    buttonTextAfterSelection={(selectedItem, index) => {
+                                                        // text represented after item is selected
+                                                        // if data array is an array of objects then return selectedItem.property to render after item is selected
+                                                        return selectedItem
+                                                    }}
+                                                    rowTextForSelection={(item, index) => {
+                                                        // text represented for each item in dropdown
+                                                        // if data array is an array of objects then return item.property to represent item in dropdown
+                                                        return item
+                                                    }}
+                                                />
+                                            </View>
+                                        </View>
+                                        <View>
+                                            <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 139.00</Text>
                                         </View>
                                     </View>
-                                    <View>
-                                        <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 139.00</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15, }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                                        <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 47 }}>Qty</Text>
-                                        <TextInput value={qty} onChangeText={(text) => setQty(text)} style={{ width: '27%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
-                                    </View>
-                                    <View>
-                                        <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 3,475.00</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                                        <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 35 }}>UOM</Text>
-                                        <View style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 35, backgroundColor: '#D9D9D9', borderRadius: 30 }}>
-                                            <SelectDropdown
-                                                data={["Pack"]}
-                                                defaultButtonText={"Pack"}
-                                                onSelect={(selectedItem, index) => {
-                                                    console.log(selectedItem, index)
-                                                }}
-                                                buttonTextAfterSelection={(selectedItem, index) => {
-                                                    return selectedItem
-                                                }}
-                                                rowTextForSelection={(item, index) => {
-                                                    // text represented for each item in dropdown
-                                                    // if data array is an array of objects then return item.property to represent item in dropdown
-                                                    return item
-                                                }}
-                                            />
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15, }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                                            <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 47 }}>Qty</Text>
+                                            <TextInput value={qty} onChangeText={(text) => setQty(text)} style={{ width: '27%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
+                                        </View>
+                                        <View>
+                                            <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 3,475.00</Text>
                                         </View>
                                     </View>
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                                        <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 12 }}>Discount</Text>
-                                        <TextInput value={discount} onChangeText={(text) => setDiscount(text)} style={{ width: '23%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
-                                        <View style={{ color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 13, backgroundColor: '#D9D9D9', borderRadius: 30, marginLeft: 15 }}>
-                                            <SelectDropdown
-                                                data={["%"]}
-                                                defaultButtonText={"%"}
-                                                onSelect={(selectedItem, index) => {
-                                                    console.log(selectedItem, index)
-                                                }}
-                                                buttonTextAfterSelection={(selectedItem, index) => {
-                                                    return selectedItem
-                                                }}
-                                                rowTextForSelection={(item, index) => {
-                                                    // text represented for each item in dropdown
-                                                    // if data array is an array of objects then return item.property to represent item in dropdown
-                                                    return item
-                                                }}
-                                            />
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                                            <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 35 }}>UOM</Text>
+                                            <View style={{ color: '#000', fontSize: 15, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 35, backgroundColor: '#D9D9D9', borderRadius: 30 }}>
+                                                <SelectDropdown
+                                                    data={["Pack"]}
+                                                    defaultButtonText={"Pack"}
+                                                    onSelect={(selectedItem, index) => {
+                                                        console.log(selectedItem, index)
+                                                    }}
+                                                    buttonTextAfterSelection={(selectedItem, index) => {
+                                                        return selectedItem
+                                                    }}
+                                                    rowTextForSelection={(item, index) => {
+                                                        // text represented for each item in dropdown
+                                                        // if data array is an array of objects then return item.property to represent item in dropdown
+                                                        return item
+                                                    }}
+                                                />
+                                            </View>
                                         </View>
                                     </View>
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15, }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                                        <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 10 }}>Disc Amt.</Text>
-                                        <TextInput value={amount} onChangeText={(text) => setAmount(text)} style={{ width: '27%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                                            <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 12 }}>Discount</Text>
+                                            <TextInput value={discount} onChangeText={(text) => setDiscount(text)} style={{ width: '23%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
+                                            <View style={{ color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, paddingHorizontal: 13, backgroundColor: '#D9D9D9', borderRadius: 30, marginLeft: 15 }}>
+                                                <SelectDropdown
+                                                    data={["%"]}
+                                                    defaultButtonText={"%"}
+                                                    onSelect={(selectedItem, index) => {
+                                                        console.log(selectedItem, index)
+                                                    }}
+                                                    buttonTextAfterSelection={(selectedItem, index) => {
+                                                        return selectedItem
+                                                    }}
+                                                    rowTextForSelection={(item, index) => {
+                                                        // text represented for each item in dropdown
+                                                        // if data array is an array of objects then return item.property to represent item in dropdown
+                                                        return item
+                                                    }}
+                                                />
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View>
-                                        <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 3,475.00</Text>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10, marginHorizontal: 15, }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                                            <Text style={{ color: 'red', fontSize: 20, fontWeight: '500', marginRight: 10 }}>Disc Amt.</Text>
+                                            <TextInput value={amount} onChangeText={(text) => setAmount(text)} style={{ width: '27%', color: '#000', fontSize: 18, fontWeight: '500', paddingVertical: 5, textAlign: 'center', backgroundColor: '#E9F4A1', borderRadius: 30 }} />
+                                        </View>
+                                        <View>
+                                            <Text style={{ color: 'red', fontSize: 25, fontWeight: '500', }}>P 3,475.00</Text>
+                                        </View>
                                     </View>
                                 </View>
                             </View>
                         </View>
-                    </View>
+                    </ScrollView>
                 </Modal>
             </View >
         </View >
@@ -453,11 +455,12 @@ const styles = StyleSheet.create({
     centeredView: {
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50,
+        marginTop: 10,
+        marginBottom: 25
 
     },
     modalView: {
-        marginTop: "10%",
+        marginTop: "5%",
         backgroundColor: "white",
         borderRadius: 20,
         // alignItems: "center",

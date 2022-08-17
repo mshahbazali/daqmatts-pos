@@ -365,6 +365,7 @@ const styles = StyleSheet.create({
         color: "#000",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableHeadEngagementText: {
         color: "#000",
@@ -428,11 +429,12 @@ const styles = StyleSheet.create({
     centeredView: {
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50,
+        marginTop: 10,
+        marginBottom: 20
 
     },
     modalView: {
-        marginTop: "10%",
+        marginTop: "5%",
         marginLeft: "10%",
         backgroundColor: "white",
         borderRadius: 20,

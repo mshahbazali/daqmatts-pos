@@ -8,8 +8,8 @@ export default function index() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen options={{ headerShown: false }} name="Dashboard" component={Dashboard} />
                 <Stack.Screen options={{ headerShown: false }} name="Remitance" component={Remitance} />
+                <Stack.Screen options={{ headerShown: false }} name="Dashboard" component={Dashboard} />
                 <Stack.Screen options={{ headerShown: false }} name="RCP" component={RCP} />
                 <Stack.Screen options={{ headerShown: false }} name="Booking" component={Booking} />
                 <Stack.Screen options={{ headerShown: false }} name="Setting" component={Setting} />

@@ -205,7 +205,7 @@ export default function index({ navigation }) {
                                         cashContainer == true ?
                                             <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                 <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                    <Text style={{ fontSize: 14, fontWeight: '600' }}>CASH</Text>
+                                                    <Text style={{ fontSize: '80%', fontWeight: '600' }}>CASH</Text>
                                                 </TouchableOpacity>
                                                 <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
                                                 <Text style={{ color: 'red', fontSize: 24, fontWeight: '600', marginTop: 10, borderBottomColor: '#000', borderBottomWidth: 1.5, paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
@@ -215,7 +215,7 @@ export default function index({ navigation }) {
                                             checkContainer == true ?
                                                 <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                     <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                        <Text style={{ fontSize: 14, fontWeight: '600' }}>CHECK</Text>
+                                                        <Text style={{ fontSize: '80%', fontWeight: '600' }}>CHECK</Text>
                                                     </TouchableOpacity>
                                                     <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Bank & Branch</Text>
                                                     <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>PNB-Subangdaku</Text>
@@ -231,7 +231,7 @@ export default function index({ navigation }) {
                                                 walletContainer == true ?
                                                     <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                         <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                            <Text style={{ fontSize: 14, fontWeight: '600' }}>eWallet</Text>
+                                                            <Text style={{ fontSize: '80%', fontWeight: '600' }}>eWallet</Text>
                                                         </TouchableOpacity>
                                                         <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Wallet Name</Text>
                                                         <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>GCASH</Text>
@@ -246,15 +246,15 @@ export default function index({ navigation }) {
                                                         <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 40, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
                                                                 <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                                    <Text style={{ fontSize: 14, fontWeight: '600' }}>Split</Text>
+                                                                    <Text style={{ fontSize: '80%', fontWeight: '600', }}>Split</Text>
                                                                 </TouchableOpacity>
                                                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                                                     <TouchableOpacity>
                                                                         <AntDesign name="pluscircleo" size={24} color="black" />
                                                                     </TouchableOpacity>
-                                                                    <View>
-                                                                        <Text style={{ marginHorizontal: 15, fontSize: 18, fontWeight: '600', color: '#000', textAlign: 'center' }}>4</Text>
-                                                                        <Text style={{ marginHorizontal: 15, fontSize: 18, fontWeight: '600', color: '#000', textAlign: 'center' }}>Payment</Text>
+                                                                    <View style={{ width: '67%' }}>
+                                                                        <Text style={{ marginHorizontal: 10, fontSize: 18, fontWeight: '600', color: '#000', textAlign: 'center' }}>4</Text>
+                                                                        <Text style={{ marginHorizontal: 10, fontSize: 15, fontWeight: '600', color: '#000', textAlign: 'center' }}>Payment</Text>
                                                                     </View>
                                                                     <TouchableOpacity>
                                                                         <AntDesign name="minuscircleo" size={24} color="black" />
@@ -262,28 +262,28 @@ export default function index({ navigation }) {
                                                                 </View>
                                                             </View>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
-                                                                <AntDesign name="delete" size={24} color="black" />
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>Cash</Text>
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>10,000.00</Text>
-                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                                <AntDesign name="delete" size={18} color="black" style={{ width: '10%', marginRight: 10 }} />
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '600', width: '30%', marginRight: 5 }}>Cash</Text>
+                                                                <Text style={{ color: '#000', fontSize: 16, fontWeight: '600', width: '40%', marginRight: 10 }}>10,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 13, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 2, textAlign: 'center', paddingHorizontal: 4, width: '33%' }}>DETAILS</Text>
                                                             </View>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
-                                                                <AntDesign name="delete" size={24} color="black" />
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>Check</Text>
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
-                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                                <AntDesign name="delete" size={18} color="black" style={{ width: '10%', marginRight: 10 }} />
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '600', width: '30%', marginRight: 5 }}>Check</Text>
+                                                                <Text style={{ color: '#000', fontSize: 16, fontWeight: '600', width: '40%', marginRight: 10 }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 13, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 2, textAlign: 'center', paddingHorizontal: 4, width: '33%' }}>DETAILS</Text>
                                                             </View>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
-                                                                <AntDesign name="delete" size={24} color="black" />
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>eWallet</Text>
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
-                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                                <AntDesign name="delete" size={18} color="black" style={{ width: '10%', marginRight: 10 }} />
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '600', width: '30%', marginRight: 5 }}>eWallet</Text>
+                                                                <Text style={{ color: '#000', fontSize: 16, fontWeight: '600', width: '40%', marginRight: 10 }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 13, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 2, textAlign: 'center', paddingHorizontal: 4, width: '33%' }}>DETAILS</Text>
                                                             </View>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
-                                                                <AntDesign name="delete" size={24} color="black" />
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>eWallet</Text>
-                                                                <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', }}>5,000.00</Text>
-                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '400', width: '30%', backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center', paddingHorizontal: 10 }}>DETAILS</Text>
+                                                                <AntDesign name="delete" size={18} color="black" style={{ width: '10%', marginRight: 10 }} />
+                                                                <Text style={{ color: '#000', fontSize: 17, fontWeight: '600', width: '30%', marginRight: 5 }}>eWallet</Text>
+                                                                <Text style={{ color: '#000', fontSize: 16, fontWeight: '600', width: '40%', marginRight: 10 }}>5,000.00</Text>
+                                                                <Text style={{ color: '#000', fontSize: 13, fontWeight: '400', backgroundColor: '#88F0EA', paddingVertical: 2, textAlign: 'center', paddingHorizontal: 4, width: '33%' }}>DETAILS</Text>
                                                             </View>
                                                         </View>
                                                         <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
