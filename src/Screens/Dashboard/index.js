@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, Modal } fr
 import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 
-export default function index({ navigation }) {
+export default function Index({ navigation }) {
     const data = [{
         seq: 1,
         code: 3289469812,
@@ -164,7 +164,7 @@ export default function index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.tableBodyContainer}>
+                                            <TouchableOpacity key={i} onPress={() => setModalVisible(!modalVisible)} style={styles.tableBodyContainer}>
                                                 <View style={styles.tableBoxFirst}>
                                                     <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.tableHead}>
                                                         <Text style={styles.tableHeadText}>{e.seq}</Text>

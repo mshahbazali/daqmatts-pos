@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import SelectDropdown from 'react-native-select-dropdown'
 
-export default function index({ navigation }) {
+export default function Index({ navigation }) {
     const data = [
         {
             itemCode: 480002245637,
@@ -109,7 +109,7 @@ export default function index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.tableBodyContainer}>
+                                            <TouchableOpacity key={i} onPress={() => setModalVisible(!modalVisible)} style={styles.tableBodyContainer}>
                                                 <View style={styles.tableBoxFirst}>
                                                     <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', }}>
                                                         <AntDesign name="closecircle" size={30} color="red" style={{ marginLeft: 10 }} />
@@ -377,6 +377,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableBody: {
         paddingVertical: 10,
@@ -386,6 +387,7 @@ const styles = StyleSheet.create({
         color: "#000",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableHeadEngagementText: {
         color: "#000",

@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, Modal, Tex
 import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 
-export default function index({ navigation }) {
+export default function Index({ navigation }) {
     const data = [
         {
             itemCode: 480002245637,
@@ -94,7 +94,7 @@ export default function index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <TouchableOpacity onPress={() => setSelectedIndex()} onLongPress={() => setSelectedIndex(i)} style={styles.tableBodyContainer}>
+                                            <TouchableOpacity key={i} onPress={() => setSelectedIndex()} onLongPress={() => setSelectedIndex(i)} style={styles.tableBodyContainer}>
                                                 <View style={{
                                                     borderWidth: 1,
                                                     borderColor: "grey",
@@ -329,6 +329,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableBody: {
         paddingVertical: 10,
@@ -338,6 +339,7 @@ const styles = StyleSheet.create({
         color: "#000",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableHeadEngagementText: {
         color: "#000",

@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, Modal, Tex
 import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 
-export default function index({ navigation }) {
+export default function Index({ navigation }) {
     const data = [
         {
             status: 1,
@@ -44,7 +44,7 @@ export default function index({ navigation }) {
                         <TextInput placeholder='Contact No' style={{ borderColor: 'grey', borderWidth: 1, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 15, fontSize: 15 }} />
                     </View>
                     <View style={{ marginTop: 20 }}>
-                        <TextInput placeholder='Email Address' keyboardType='text' style={{ borderColor: 'grey', borderWidth: 1, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 15, fontSize: 15 }} />
+                        <TextInput placeholder='Email Address' keyboardType='email-address' style={{ borderColor: 'grey', borderWidth: 1, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 15, fontSize: 15 }} />
                     </View>
                     <View style={{ marginTop: 20 }}>
                         <TextInput placeholder='Credit Limit' style={{ borderColor: 'grey', borderWidth: 1, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 15, fontSize: 15 }} />
@@ -102,7 +102,7 @@ export default function index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <View style={styles.tableBodyContainer}>
+                                            <View key={i} style={styles.tableBodyContainer}>
                                                 <View style={styles.tableBoxFirst}>
                                                     <View style={styles.tableBody}>
                                                         <TouchableOpacity style={styles.collectionBtn}>
@@ -285,6 +285,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableBody: {
         paddingVertical: 10,
@@ -294,6 +295,7 @@ const styles = StyleSheet.create({
         color: "#000",
         fontSize: 18,
         fontWeight: '500',
+        textAlign: 'center'
     },
     tableHeadEngagementText: {
         color: "#000",

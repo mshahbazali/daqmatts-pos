@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, Modal, Tex
 import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 
-export default function index({ navigation }) {
+export default function Index({ navigation }) {
     const data = [
         {
             name: 'Gross Amount',
@@ -50,6 +50,7 @@ export default function index({ navigation }) {
     const [checkContainer, setCheckContainer] = useState(false)
     const [walletContainer, setWalletContainer] = useState(false)
     const [splitContainer, setSplitContainer] = useState(false)
+
     return (
         <View style={styles.container}>
             <View style={{ width: '100%', }}>
@@ -200,22 +201,20 @@ export default function index({ navigation }) {
                                     </View>
 
 
-                                    {/* Cash Container  */}
                                     {
                                         cashContainer == true ?
                                             <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                 <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                    <Text style={{ fontSize: '80%', fontWeight: '600' }}>CASH</Text>
+                                                    <Text style={{ fontSize: 15, fontWeight: '600' }}>CASH</Text>
                                                 </TouchableOpacity>
                                                 <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Amount</Text>
                                                 <Text style={{ color: 'red', fontSize: 24, fontWeight: '600', marginTop: 10, borderBottomColor: '#000', borderBottomWidth: 1.5, paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
                                             </View>
                                             :
-                                            // Check Container 
                                             checkContainer == true ?
                                                 <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                     <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                        <Text style={{ fontSize: '80%', fontWeight: '600' }}>CHECK</Text>
+                                                        <Text style={{ fontSize: 15, fontWeight: '600' }}>CHECK</Text>
                                                     </TouchableOpacity>
                                                     <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Bank & Branch</Text>
                                                     <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>PNB-Subangdaku</Text>
@@ -227,11 +226,10 @@ export default function index({ navigation }) {
                                                     <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
                                                 </View>
                                                 :
-                                                // EWallet Conatiner 
                                                 walletContainer == true ?
                                                     <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 70, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                         <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                            <Text style={{ fontSize: '80%', fontWeight: '600' }}>eWallet</Text>
+                                                            <Text style={{ fontSize: 15, fontWeight: '600' }}>eWallet</Text>
                                                         </TouchableOpacity>
                                                         <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', marginTop: 20 }}>Wallet Name</Text>
                                                         <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>GCASH</Text>
@@ -241,12 +239,11 @@ export default function index({ navigation }) {
                                                         <Text style={{ color: '#FF0000', fontSize: 20, fontWeight: '600', marginTop: 10, borderRadius: 16, backgroundColor: '#88F0EA', paddingVertical: 5, textAlign: 'center' }}>P 22,000.00</Text>
                                                     </View>
                                                     :
-                                                    // Split Container 
                                                     <View>
                                                         <View style={{ backgroundColor: "#C4C4C4", paddingTop: 10, paddingBottom: 40, width: '100%', borderRadius: 13, paddingHorizontal: 15, marginTop: 80 }}>
                                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
                                                                 <TouchableOpacity style={{ backgroundColor: "yellow", paddingHorizontal: 15, paddingVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '20%' }}>
-                                                                    <Text style={{ fontSize: '80%', fontWeight: '600', }}>Split</Text>
+                                                                    <Text style={{ fontSize: 15, fontWeight: '600', }}>Split</Text>
                                                                 </TouchableOpacity>
                                                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                                                     <TouchableOpacity>
@@ -309,7 +306,7 @@ export default function index({ navigation }) {
                                     {
                                         data.map((e, i) => {
                                             return (
-                                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginVertical: 18 }}>
+                                                <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginVertical: 18 }}>
                                                     <Text style={{ fontSize: 22, color: "#000", fontWeight: '400', textAlign: 'center' }}>{e.name}</Text>
                                                     <Text style={{ fontSize: 22, color: "red", fontWeight: '400', textAlign: 'center' }}>{e.amount}</Text>
                                                 </View>
