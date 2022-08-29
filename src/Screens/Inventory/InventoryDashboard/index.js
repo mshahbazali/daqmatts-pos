@@ -3,13 +3,29 @@ import React, { useState } from 'react'
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 
 export default function Index({ navigation }) {
-    const data = [{
-        seq: 1,
-        code: 3289469812,
-        Name: 'Shahbaz Ali',
-        Address: "Poblacion, Liloan, Cebu",
-    }]
+    const data = [
+        {
+            itemCode: 480002245637,
+            tagName: '10/06/2022',
+            description: 24562345,
+            brand: 245123,
+            uom: 245123,
+            qty: 245123,
+        },
+        {
+            itemCode: 480002245637,
+            tagName: '10/06/2022',
+            description: 24562345,
+            brand: 245123,
+            uom: 245123,
+            qty: 245123,
+        },
+    ]
     const [modalVisible, setModalVisible] = useState(false);
+    const [stockRequest, setStockRequest] = useState(false);
+    const [stockTransfer, setStockTransfer] = useState(false);
+    const [physicalCount, setPhysicalCount] = useState(false);
+    const [reclassifyStocks, setReclassifyStocks] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.sideBarContainer}>
@@ -78,14 +94,14 @@ export default function Index({ navigation }) {
             </View>
             <View style={{ width: '80%', justifyContent: 'flex-end' }}>
                 <ScrollView>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, backgroundColor: 'red' }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 15, backgroundColor: 'red', alignItems: 'center', }}>
                         <Text style={{ color: 'white', fontSize: 25 }}>Inventory Management</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate("ItemList")} style={{ backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
-                            <Image source={require('../../../Assets/Image/invoice.png')} style={{ width: 40, height: 40, marginRight: 10 }} />
-                            <Text style={{ fontSize: 17, fontWeight: '600' }}>Sale Invoice</Text>
+                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ backgroundColor: "#A1EFF4", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', }}>
+                            <Image source={require('../../../Assets/Image/option_icon.png')} style={{ width: 30, height: 30, marginRight: 10 }} />
+                            <Text style={{ fontSize: 18, fontWeight: '800' }}>OPTIONS</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ width: '100%' }}>
+                    <View style={{ width: '100%', marginTop: 10 }}>
                         <ScrollView>
                             <View style={styles.tableContainer}>
 
@@ -93,32 +109,32 @@ export default function Index({ navigation }) {
                                 <View style={styles.tableHeadContainer}>
                                     <View style={styles.tableBoxFirst}>
                                         <TouchableOpacity style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Seq.</Text>
+                                            <Text style={styles.tableHeadText}>Product Code</Text>
                                         </TouchableOpacity>
                                     </View>
                                     <View style={styles.tableBoxSecond}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Code</Text>
+                                            <Text style={styles.tableHeadText}>Tag Name</Text>
                                         </View>
                                     </View>
                                     <View style={styles.tableBoxThird}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Name</Text>
+                                            <Text style={styles.tableHeadText}>Description</Text>
                                         </View>
                                     </View>
                                     <View style={styles.tableBoxFour}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Address</Text>
+                                            <Text style={styles.tableHeadText}>GQty</Text>
                                         </View>
                                     </View>
                                     <View style={styles.tableBoxFive}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadEngagementText}>Engagement Status</Text>
+                                            <Text style={styles.tableHeadText}>BQty</Text>
                                         </View>
                                     </View>
                                     <View style={styles.tableBoxSix}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Collection Status</Text>
+                                            <Text style={styles.tableHeadText}>ΣQty</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -127,39 +143,35 @@ export default function Index({ navigation }) {
                                 {
                                     data.map((e, i) => {
                                         return (
-                                            <TouchableOpacity key={i} onPress={() => setModalVisible(!modalVisible)} style={styles.tableBodyContainer}>
+                                            <TouchableOpacity key={i} style={styles.tableBodyContainer}>
                                                 <View style={styles.tableBoxFirst}>
-                                                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.tableHead}>
-                                                        <Text style={styles.tableHeadText}>{e.seq}</Text>
-                                                    </TouchableOpacity>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.itemCode}</Text>
+                                                    </View>
                                                 </View>
                                                 <View style={styles.tableBoxSecond}>
-                                                    <View style={styles.tableHead}>
-                                                        <Text style={styles.tableHeadText}>{e.code}</Text>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.tagName}</Text>
                                                     </View>
                                                 </View>
                                                 <View style={styles.tableBoxThird}>
-                                                    <View style={styles.tableHead}>
-                                                        <Text style={styles.tableHeadText}>{e.Name}</Text>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.description}</Text>
                                                     </View>
                                                 </View>
                                                 <View style={styles.tableBoxFour}>
-                                                    <View style={styles.tableHead}>
-                                                        <Text style={styles.tableHeadText}>{e.Address}</Text>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.brand}</Text>
                                                     </View>
                                                 </View>
                                                 <View style={styles.tableBoxFive}>
-                                                    <View style={styles.tableHead}>
-                                                        <TouchableOpacity style={styles.engagementBtn}>
-                                                            <Text style={styles.engagementBtnText}>Non-Productive</Text>
-                                                        </TouchableOpacity>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.uom}</Text>
                                                     </View>
                                                 </View>
                                                 <View style={styles.tableBoxSix}>
-                                                    <View style={styles.tableHead}>
-                                                        <TouchableOpacity style={styles.collectionBtn}>
-                                                            <Text style={styles.engagementBtnText}>Open Balance</Text>
-                                                        </TouchableOpacity>
+                                                    <View style={styles.tableBody}>
+                                                        <Text style={styles.tableBodyText}>{e.qty}</Text>
                                                     </View>
                                                 </View>
                                             </TouchableOpacity>
@@ -169,8 +181,6 @@ export default function Index({ navigation }) {
                                 }
                                 {/* Table Body End  */}
                             </View>
-
-
                         </ScrollView>
                     </View>
                 </ScrollView>
@@ -181,54 +191,47 @@ export default function Index({ navigation }) {
                 >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ position: 'absolute', top: 10, right: 15 }}>
-                                <AntDesign name="closecircle" size={24} color="black" />
+                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ marginBottom: 15 }}>
+                                <AntDesign name="closecircle" size={24} color="red" />
                             </TouchableOpacity>
-                            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/invoice.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity onPress={() => {
-                                        setModalVisible(!modalVisible)
-                                        navigation.navigate("SalesInvoice")
-                                    }} style={{ width: 150, backgroundColor: "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 22, textAlign: 'center' }}>Sales Invoice</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/collection.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Collection</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/replacement.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Stock Replacement</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/return.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Sales Return</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/free.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Free of Charge</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                                    <Image source={require('../../../Assets/Image/non.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                                    <TouchableOpacity style={{ width: 150, backgroundColor: "#D9D9D9", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                                        <Text style={{ fontSize: 20, textAlign: 'center' }}>Non Productive</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
+                            <TouchableOpacity onPress={() => {
+                                setStockRequest(true)
+                                setStockTransfer(false)
+                                setPhysicalCount(false)
+                                setReclassifyStocks(false)
+                                navigation.navigate("StockRequest")
+                                setModalVisible(!modalVisible)
+
+                            }} style={{ backgroundColor: stockRequest == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20 }}>
+                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Stock Request</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => {
+                                setStockRequest(false)
+                                setStockTransfer(true)
+                                setPhysicalCount(false)
+                                setReclassifyStocks(false)
+                                setModalVisible(!modalVisible)
+                            }} style={{ backgroundColor: stockTransfer == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Stock Transfer</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => {
+                                setStockRequest(false)
+                                setStockTransfer(false)
+                                setPhysicalCount(true)
+                                setReclassifyStocks(false)
+                                setModalVisible(!modalVisible)
+                            }} style={{ backgroundColor: physicalCount == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 65, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Physical Count</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => {
+                                setStockRequest(false)
+                                setStockTransfer(false)
+                                setPhysicalCount(false)
+                                setReclassifyStocks(true)
+                                setModalVisible(!modalVisible)
+                            }} style={{ backgroundColor: reclassifyStocks == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 55, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Reclassify Stocks</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </Modal>
@@ -305,27 +308,36 @@ const styles = StyleSheet.create({
     tableContainer: {
         justifyContent: 'center',
         width: '100%',
-        marginTop: 20
+        marginTop: 5
     },
     tableHeadContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
-        marginTop: 20
+        marginTop: 20,
     },
     tableBodyContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
     },
-    tableHead: {
-        // borderBottomColor: 'grey',
-        // borderBottomWidth: 1,
+    tableBody: {
         paddingVertical: 10,
+        textAlign: 'center',
+    },
+    tableBodyText: {
+        color: "#000",
+        fontSize: 18,
+        fontWeight: '500',
         textAlign: 'center'
     },
+    tableHead: {
+        paddingVertical: 10,
+        textAlign: 'center',
+        backgroundColor: '#000'
+    },
     tableHeadText: {
-        color: "#000",
+        color: "#fff",
         fontSize: 18,
         fontWeight: '500',
         textAlign: 'center'
@@ -339,37 +351,43 @@ const styles = StyleSheet.create({
     tableBoxFirst: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '8%',
-        paddingVertical: 10
+        borderTopWidth: 0,
+        width: '17%',
+        paddingVertical: 10, textAlign: 'center'
     },
     tableBoxSecond: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '14%',
+        borderTopWidth: 0,
+        width: '15%',
         paddingVertical: 10
     },
     tableBoxThird: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '17%',
+        borderTopWidth: 0,
+        width: '36%',
         paddingVertical: 10
     },
     tableBoxFour: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '27%',
+        borderTopWidth: 0,
+        width: '10%',
         paddingVertical: 10
     },
     tableBoxFive: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '15%',
+        borderTopWidth: 0,
+        width: '10%',
         paddingVertical: 10
     },
     tableBoxSix: {
         borderWidth: 1,
         borderColor: "grey",
-        width: '15%',
+        borderTopWidth: 0,
+        width: '10%',
         paddingVertical: 10
     },
     engagementBtn: {
@@ -394,14 +412,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginTop: 10,
         marginBottom: 20
-
     },
     modalView: {
         marginTop: "5%",
-        marginLeft: "10%",
+        marginLeft: "73%",
         backgroundColor: "white",
         borderRadius: 20,
-        padding: 35,
+        padding: 15,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {

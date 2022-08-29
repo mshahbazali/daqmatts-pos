@@ -1,10 +1,4 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import StockLoadIn from "./StockLoadIn";
+import Pending from "./Pending";
 
-export default function index() {
-    return (
-        <View>
-            <Text>index</Text>
-        </View>
-    )
-}
+export {StockLoadIn , Pending}
