@@ -7,7 +7,7 @@ export default function index() {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='ItemDetail'>
+            <Stack.Navigator initialRouteName='StockLoadIn'>
 
                 {/* Inventory Dashboard */}
 

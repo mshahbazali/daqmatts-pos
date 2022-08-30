@@ -140,7 +140,7 @@ export default function Index({ navigation }) {
                                                     borderBottomWidth: 1,
                                                     borderColor: "grey",
                                                     borderTopWidth: 0,
-                                                    width: '10%',
+                                                    width: '15%',
                                                     paddingVertical: 10,
                                                     backgroundColor: selectedIndex == i ? 'yellow' : 'white'
 
@@ -153,7 +153,7 @@ export default function Index({ navigation }) {
                                                     borderBottomWidth: 1,
                                                     borderColor: "grey",
                                                     borderTopWidth: 0,
-                                                    width: '15%',
+                                                    width: '10%',
                                                     paddingVertical: 10,
                                                     backgroundColor: selectedIndex == i ? 'yellow' : 'white'
 

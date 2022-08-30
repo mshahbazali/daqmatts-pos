@@ -34,7 +34,7 @@ export default function Index({ navigation }) {
                     <View>
                         <View style={{ flexDirection: 'row', paddingVertical: 13, paddingHorizontal: 18, justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#EB4343' }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', }}>
-                                <TouchableOpacity onPress={() => navigation.navigate("ItemList")}>
+                                <TouchableOpacity onPress={() => navigation.navigate("RequestItem")}>
                                     <AntDesign name="arrowleft" size={32} color="black" style={{ marginHorizontal: 10 }} />
                                 </TouchableOpacity>
                                 <TouchableOpacity style={{ backgroundColor: "#F0F1C4", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
@@ -213,10 +213,10 @@ export default function Index({ navigation }) {
                                     />
                                 </View>
                                 <View style={{ justifyContent: 'space-between', alignItems: 'center', marginVertical: 40, marginHorizontal: 40, flexDirection: 'row' }}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                                         <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#8EFE92", paddingHorizontal: 30, paddingVertical: 5, marginRight: 10, borderRadius: 10 }}>OK</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                                         <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FE958E", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, borderRadius: 10 }}>CANCEL</Text>
                                     </TouchableOpacity>
                                 </View>

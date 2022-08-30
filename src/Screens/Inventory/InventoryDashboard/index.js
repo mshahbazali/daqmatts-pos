@@ -210,6 +210,7 @@ export default function Index({ navigation }) {
                                 setStockTransfer(true)
                                 setPhysicalCount(false)
                                 setReclassifyStocks(false)
+                                navigation.navigate("StockTransfer")
                                 setModalVisible(!modalVisible)
                             }} style={{ backgroundColor: stockTransfer == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20, marginTop: 15 }}>
                                 <Text style={{ fontSize: 22, textAlign: 'center' }}>Stock Transfer</Text>
