@@ -44,8 +44,8 @@ export default function Index({ navigation }) {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ flexDirection: 'row', width: '20%', alignItems: 'center', justifyContent: 'center', }}>
-                                <Text style={{ fontSize: 20, fontWeight: '600', marginRight: 10 }}>ΣSKU</Text>
-                                <Text style={{ fontSize: 23, fontWeight: '800', paddingVertical: 5, paddingHorizontal: 12, borderRadius: 10, borderWidth: 2, borderColor: '#000' }}>2.6</Text>
+                                <Text style={{ fontSize: 20, fontWeight: '600', marginRight: 10, color: '#fff' }}>ΣSKU</Text>
+                                <Text style={{ fontSize: 23, color: '#fff', fontWeight: '800', paddingVertical: 5, paddingHorizontal: 12, borderRadius: 10, borderWidth: 2, borderColor: '#fff' }}>2.6</Text>
                             </View>
                             <TouchableOpacity onPress={() => navigation.navigate("ItemDetail")} style={{ width: "10%", backgroundColor: "yellow", padding: 10, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                 <Text style={{ fontSize: 22, fontWeight: '600' }}>Next</Text>

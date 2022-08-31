@@ -7,7 +7,15 @@ export default function index() {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='StockLoadIn'>
+            <Stack.Navigator>
+
+
+                {/* RCO HOME  */}
+                <Stack.Screen options={{ headerShown: false }} name="RCPHOME" component={RCPHOME} />
+                <Stack.Screen options={{ headerShown: false }} name="InvoiceLineList" component={InvoiceLineList} />
+                <Stack.Screen options={{ headerShown: false }} name="ItemList" component={ItemList} />
+                <Stack.Screen options={{ headerShown: false }} name="PaymentSummary" component={PaymentSummary} />
+                <Stack.Screen options={{ headerShown: false }} name="SalesInvoice" component={SalesInvoice} />
 
                 {/* Inventory Dashboard */}
 
@@ -33,12 +41,7 @@ export default function index() {
                 <Stack.Screen options={{ headerShown: false }} name="ItemDetail" component={ItemDetail} />
                 <Stack.Screen options={{ headerShown: false }} name="ItemSelection" component={ItemSelection} />
 
-                {/* RCO HOME  */}
-                <Stack.Screen options={{ headerShown: false }} name="RCPHOME" component={RCPHOME} />
-                <Stack.Screen options={{ headerShown: false }} name="InvoiceLineList" component={InvoiceLineList} />
-                <Stack.Screen options={{ headerShown: false }} name="ItemList" component={ItemList} />
-                <Stack.Screen options={{ headerShown: false }} name="PaymentSummary" component={PaymentSummary} />
-                <Stack.Screen options={{ headerShown: false }} name="SalesInvoice" component={SalesInvoice} />
+
             </Stack.Navigator>
         </NavigationContainer>
     )

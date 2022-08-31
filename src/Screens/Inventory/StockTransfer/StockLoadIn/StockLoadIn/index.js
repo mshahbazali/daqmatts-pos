@@ -6,6 +6,24 @@ export default function Index({ navigation }) {
   const data = [
     {
       no: 1,
+      code: 423513245123,
+      discription: "Bigshot Hotdog Cheese King Size 1Kg",
+      tag: "BSCKS1K",
+      uom: "Pack",
+      qty: 340.00,
+    },
+    {
+      no: 2,
+      code: 3563465657,
+      discription: "Bigshot Hotdog Cheese King Size 1Kg",
+      tag: "BK6342",
+      uom: "Pack",
+      qty: 390.00,
+    },
+  ]
+  const dataList = [
+    {
+      no: 1,
       date: '10/06/2022',
       referenceNo: 54356457634,
       brand: 245123,
@@ -23,7 +41,8 @@ export default function Index({ navigation }) {
       qty: 245123,
     },
   ]
-  const [modalVisible, setModalVisible] = useState(false);
+  const [viewModal, setViewModal] = useState(false);
+  const [submitModal, setSubmitModal] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState()
 
   return (
@@ -46,7 +65,7 @@ export default function Index({ navigation }) {
                 {/* Table Head Start */}
                 <View style={styles.tableHeadContainer}>
                   <View style={styles.tableBoxFirst}>
-                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.tableHead}>
+                    <TouchableOpacity style={styles.tableHead}>
                       <Text style={styles.tableHeadText}>No</Text>
                     </TouchableOpacity>
                   </View>
@@ -89,7 +108,7 @@ export default function Index({ navigation }) {
                 {/* Table Head End  */}
                 {/* Table Body Start  */}
                 {
-                  data.map((e, i) => {
+                  dataList.map((e, i) => {
                     return (
                       <TouchableOpacity key={i} onLongPress={() => setSelectedIndex(i)} style={styles.tableBodyContainer}>
                         <View style={{
@@ -184,7 +203,7 @@ export default function Index({ navigation }) {
                           alignItems: 'center',
                           justifyContent: 'center',
                         }}>
-                          <TouchableOpacity style={{
+                          <TouchableOpacity onPress={() => setViewModal(!viewModal)} style={{
                             backgroundColor: '#1EE9F6',
                             paddingVertical: 5,
                             paddingHorizontal: 20,
@@ -193,7 +212,7 @@ export default function Index({ navigation }) {
                           }}>
                             <Text style={{ fontSize: 18, fontWeight: '500' }}>View</Text>
                           </TouchableOpacity>
-                          <TouchableOpacity style={{
+                          <TouchableOpacity onPress={() => setSubmitModal(!submitModal)} style={{
                             backgroundColor: '#8FF07F',
                             paddingVertical: 5,
                             paddingHorizontal: 20,
@@ -222,60 +241,204 @@ export default function Index({ navigation }) {
             </ScrollView>
           </View>
         </ScrollView>
+
+        {/* View Modal  */}
+
+
         <Modal
           animationType="slide"
           transparent={true}
-          visible={modalVisible}
+          visible={viewModal}
         >
           <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ position: 'absolute', top: 10, right: 15 }}>
-                <AntDesign name="closecircle" size={24} color="black" />
-              </TouchableOpacity>
-              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/invoice.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Sales Invoice</Text>
-                  </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/collection.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Collection</Text>
-                  </TouchableOpacity>
-                </View>
+            <View style={styles.viewModal}>
+              <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end', width: '100%' }}>
+                <TouchableOpacity style={{ marginTop: 20, marginRight: 20 }} onPress={() => setViewModal(!viewModal)}>
+                  <AntDesign name="closecircleo" size={30} color="#000" />
+                </TouchableOpacity>
               </View>
-              <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/replacement.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Stock Replacement</Text>
-                  </TouchableOpacity>
-                </View>
-                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/return.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Sales Return</Text>
-                  </TouchableOpacity>
-                </View>
+
+              <View style={{
+                width: '100%'
+              }}>
+                <ScrollView>
+
+                  {/* Table Head Start */}
+                  <View style={styles.tableHeadContainer}>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "5%",
+                      paddingVertical: 10
+                    }}>
+                      <TouchableOpacity style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>No</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "20%",
+                      paddingVertical: 10
+                    }}>
+                      <View style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>Code</Text>
+                      </View>
+                    </View>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "30%",
+                      paddingVertical: 10
+                    }}>
+                      <View style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>Description</Text>
+                      </View>
+                    </View>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "15%",
+                      paddingVertical: 10
+                    }}>
+                      <View style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>Tag</Text>
+                      </View>
+                    </View>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "15%",
+                      paddingVertical: 10
+                    }}>
+                      <View style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>UOM</Text>
+                      </View>
+                    </View>
+                    <View style={{
+                      borderTopWidth: 0,
+                      width: "15%",
+                      paddingVertical: 10
+                    }}>
+                      <View style={styles.tableHead}>
+                        <Text style={styles.tableHeadText}>SQty</Text>
+                      </View>
+                    </View>
+                  </View>
+                  {/* Table Head End  */}
+                  {/* Table Body Start  */}
+                  {
+                    data.map((e, i) => {
+                      return (
+                        <TouchableOpacity key={i} onLongPress={() => setSelectedIndex(i)} style={styles.tableBodyContainer}>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderLeftWidth: 1,
+                            borderColor: "grey",
+                            width: '5%',
+                            paddingVertical: 10,
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.no}</Text>
+                            </View>
+                          </View>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderColor: "grey",
+                            borderTopWidth: 0,
+                            width: '20%',
+                            paddingVertical: 10,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.code}</Text>
+                            </View>
+                          </View>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderColor: "grey",
+                            width: '30%',
+                            paddingVertical: 10,
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.discription}</Text>
+                            </View>
+                          </View>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderColor: "grey",
+                            borderTopWidth: 0,
+                            width: '15%',
+                            paddingVertical: 10,
+
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.tag}</Text>
+                            </View>
+                          </View>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderColor: "grey",
+                            borderTopWidth: 0,
+                            width: '15%',
+                            paddingVertical: 10,
+
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.uom}</Text>
+                            </View>
+                          </View>
+                          <View style={{
+                            borderBottomWidth: 1,
+                            borderColor: "grey",
+                            borderTopWidth: 0,
+                            width: '15%',
+                            paddingVertical: 10,
+
+                          }}>
+                            <View style={styles.tableBody}>
+                              <Text style={styles.tableBodyText}>{e.qty}</Text>
+                            </View>
+                          </View>
+                        </TouchableOpacity>
+                      )
+
+                    })
+                  }
+                  {/* Table Body End  */}
+                </ScrollView>
               </View>
-              <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/free.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Free of Charge</Text>
-                  </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+
+        {/* Confirm Modal  */}
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={submitModal}
+        >
+          <ScrollView>
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 15 }}>
+                  <View>
+                    <Text style={{ color: '#000', fontSize: 25, fontWeight: '500', textAlign: 'left' }}>Confirm Received...</Text>
+                  </View>
                 </View>
-                <View style={{ marginLeft: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', width: '45%' }}>
-                  <Image source={require('../../../../../Assets/Image/non.png')} style={{ width: 60, height: 60, marginRight: 15 }} />
-                  <TouchableOpacity style={{ width: 150, backgroundColor: "yellow", alignItems: 'center', justifyContent: 'center', paddingVertical: 25, paddingHorizontal: 20, borderRadius: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>Non Productive</Text>
+                <View style={{ marginVertical: 20, justifyContent: 'center', alignItems: 'center', }}>
+                  <Text style={{ color: '#000', fontSize: 23, fontWeight: '400', width: "80%" }}>Please Check all Item before Confirming
+                    this process is irreversable. </Text>
+                </View>
+                <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end', marginVertical: 40, marginHorizontal: 40, flexDirection: 'row', width: '100%' }}>
+                  <TouchableOpacity onPress={() => setSubmitModal(!submitModal)}>
+                    <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#e0e0e0", paddingHorizontal: 30, paddingVertical: 2, marginRight: 10, borderRadius: 10, marginRight: 30 }}>Back</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setSubmitModal(!submitModal)}>
+                    <Text style={{ fontSize: 20, color: "#fff", fontWeight: '400', backgroundColor: "red", paddingHorizontal: 30, paddingVertical: 2, marginRight: 10, borderRadius: 10 }}>Yes</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
-          </View>
+          </ScrollView>
         </Modal>
       </View >
     </View >
@@ -446,14 +609,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
-
+    width: '100%'
   },
   modalView: {
     marginTop: "10%",
-    marginLeft: "10%",
+    marginLeft: "8%",
     backgroundColor: "white",
     borderRadius: 20,
-    padding: 35,
+    padding: 20,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -463,7 +626,23 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+    width: "45%"
 
+  },
+  viewModal: {
+    marginTop: "10%",
+    backgroundColor: "white",
+    borderRadius: 10,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    width: "65%"
   },
   button: {
     borderRadius: 20,
