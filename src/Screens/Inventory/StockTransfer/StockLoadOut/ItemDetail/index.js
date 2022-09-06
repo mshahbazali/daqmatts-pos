@@ -61,9 +61,9 @@ export default function Index({ navigation }) {
                     rowTextForSelection={(item, index) => {
                       return item
                     }}
-                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, }}
-                    buttonTextStyle={{ fontSize: 20, textAlign: 'center' }}
-                    rowTextStyle={{ fontSize: 20 }}
+                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, width: '90%' }}
+                    buttonTextStyle={{ fontSize: 18, textAlign: 'center', width: '90%' }}
+                    rowTextStyle={{ fontSize: 18, width: '90%', textAlign: 'center' }}
                     rowStyle={{ backgroundColor: 'white', paddingHorizontal: 10 }}
                   />
                 </View>
@@ -201,7 +201,7 @@ export default function Index({ navigation }) {
                 </TouchableOpacity>
               </View>
               <View style={{ marginVertical: 20, justifyContent: 'center', alignItems: 'center', }}>
-                <Text style={{ color: '#000', fontSize: 22, fontWeight: '500', textAlign: 'center', }}>Please Wait for Warehouse Confirmation</Text>
+                <Text style={{ color: '#000', fontSize: 19, fontWeight: '500', textAlign: 'center', }}>Please Wait for Warehouse Confirmation</Text>
                 <Image source={require('../../../../../Assets/Image/loading.png')} style={{ width: 90, height: 90, marginVertical: 20 }} />
               </View>
 
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   engagementBtnText: {
-    fontSize: 18, fontWeight: '500', color: "#000",
+    fontSize: 18, fontWeight: '500', color: "#000", textAlign: 'center'
   },
   centeredView: {
     justifyContent: "center",
@@ -500,7 +500,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   itemModalView: {
-    marginTop: "15%",
+    marginTop: "10%",
     marginLeft: '15%',
     backgroundColor: "#fff",
     borderRadius: 20,

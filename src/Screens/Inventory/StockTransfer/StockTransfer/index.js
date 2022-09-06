@@ -74,14 +74,14 @@ export default function Index({ navigation }) {
                                         return item
                                     }}
                                     dropdownIconPosition={"left"}
-                                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, }}
+                                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, width: '80%' }}
                                     buttonTextStyle={{ fontSize: 20, textAlign: 'center' }}
                                     rowTextStyle={{ fontSize: 20 }}
                                     rowStyle={{ backgroundColor: 'white', paddingHorizontal: 10 }}
                                 />
-                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right' }}>Stock Load In</Text>
-                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right' }}>Stock Load Out</Text>
-                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right' }}>Panel Transfer</Text>
+                                <Text style={{ fontSize: 18, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right', width: '80%' }}>Stock Load In</Text>
+                                <Text style={{ fontSize: 18, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right', width: '80%' }}>Stock Load Out</Text>
+                                <Text style={{ fontSize: 18, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, textAlign: 'right', width: '80%' }}>Panel Transfer</Text>
                             </View>
                             <View style={{ marginTop: 30 }}>
                                 <Text style={{ fontSize: 20, color: "#000", fontWeight: '600' }}>Sort</Text>
@@ -246,8 +246,8 @@ export default function Index({ navigation }) {
                                     setPanel(false)
                                     navigation.navigate("StockLoadIn")
                                     setModalVisible(!modalVisible)
-                                }} style={{ backgroundColor: stockLoadIn == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20 }}>
-                                    <Text style={{ fontSize: 22, textAlign: 'center' }}>STOCK LOAD-IN</Text>
+                                }} style={{ backgroundColor: stockLoadIn == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 50, borderRadius: 20 }}>
+                                    <Text style={{ fontSize: 18, textAlign: 'center' }}>STOCK LOAD-IN</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {
                                     setStockLoadIn(false)
@@ -255,16 +255,16 @@ export default function Index({ navigation }) {
                                     setPanel(false)
                                     navigation.navigate("StockLoadOut")
                                     setModalVisible(!modalVisible)
-                                }} style={{ backgroundColor: stockLoadOut == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20, marginTop: 15 }}>
-                                    <Text style={{ fontSize: 20, textAlign: 'center' }}>STOCK LOAD-OUT</Text>
+                                }} style={{ backgroundColor: stockLoadOut == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 45, borderRadius: 20, marginTop: 15 }}>
+                                    <Text style={{ fontSize: 18, textAlign: 'center' }}>STOCK LOAD-OUT</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {
                                     setStockLoadIn(false)
                                     setStockLoadOut(false)
                                     setPanel(true)
                                     setModalVisible(!modalVisible)
-                                }} style={{ backgroundColor: panel == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 80, borderRadius: 20, marginTop: 15 }}>
-                                    <Text style={{ fontSize: 22, textAlign: 'center' }}>PANEL-PANEL</Text>
+                                }} style={{ backgroundColor: panel == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 60, borderRadius: 20, marginTop: 15 }}>
+                                    <Text style={{ fontSize: 18, textAlign: 'center' }}>PANEL-PANEL</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -436,7 +436,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     engagementBtnText: {
-        fontSize: 15, fontWeight: '500', color: "#000", textAlign: 'center'
+        fontSize: 13, fontWeight: '500', color: "#000", textAlign: 'center'
     },
     centeredView: {
         justifyContent: "center",

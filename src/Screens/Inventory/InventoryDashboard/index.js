@@ -29,19 +29,19 @@ export default function Index({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.sideBarContainer}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.sideBarLogoContainer}>
                         <Image source={require("../../../Assets/Image/logo.png")} style={{ width: 150, height: 80 }} />
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox}>
-                            <AntDesign name="home" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="home" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Dashboard</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("RCPHOME")}>
-                            <AntDesign name="enviroment" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="enviroment" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>RCP</Text>
                         </TouchableOpacity>
                     </View>
@@ -49,44 +49,44 @@ export default function Index({ navigation }) {
 
                         <TouchableOpacity style={styles.menuBox}>
 
-                            <AntDesign name="calculator" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="calculator" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Transaction</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <Feather name="list" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Feather name="list" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Inventory</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox}>
-                            <Entypo name="credit" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Entypo name="credit" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Remitance</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <AntDesign name="carryout" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="carryout" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Booking</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <AntDesign name="car" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="car" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>SI Delivery</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
 
                         <TouchableOpacity style={styles.menuBox} >
-                            <FontAwesome name="bar-chart-o" size={30} color="black" style={{ marginRight: 15 }} />
+                            <FontAwesome name="bar-chart-o" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Reports</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <Feather name="settings" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Feather name="settings" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Settings</Text>
                         </TouchableOpacity>
                     </View>
@@ -102,7 +102,7 @@ export default function Index({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={{ width: '100%', marginTop: 10 }}>
-                        <ScrollView>
+                        <ScrollView showsVerticalScrollIndicator={false}>
                             <View style={styles.tableContainer}>
 
                                 {/* Table Head Start */}
@@ -202,8 +202,8 @@ export default function Index({ navigation }) {
                                 navigation.navigate("StockRequest")
                                 setModalVisible(!modalVisible)
 
-                            }} style={{ backgroundColor: stockRequest == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20 }}>
-                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Stock Request</Text>
+                            }} style={{ backgroundColor: stockRequest == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 50, borderRadius: 20 }}>
+                                <Text style={{ fontSize: 18, textAlign: 'center' }}>Stock Request</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => {
                                 setStockRequest(false)
@@ -212,8 +212,8 @@ export default function Index({ navigation }) {
                                 setReclassifyStocks(false)
                                 navigation.navigate("StockTransfer")
                                 setModalVisible(!modalVisible)
-                            }} style={{ backgroundColor: stockTransfer == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 70, borderRadius: 20, marginTop: 15 }}>
-                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Stock Transfer</Text>
+                            }} style={{ backgroundColor: stockTransfer == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 50, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 18, textAlign: 'center' }}>Stock Transfer</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => {
                                 setStockRequest(false)
@@ -221,8 +221,8 @@ export default function Index({ navigation }) {
                                 setPhysicalCount(true)
                                 setReclassifyStocks(false)
                                 setModalVisible(!modalVisible)
-                            }} style={{ backgroundColor: physicalCount == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 65, borderRadius: 20, marginTop: 15 }}>
-                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Physical Count</Text>
+                            }} style={{ backgroundColor: physicalCount == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 50, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 18, textAlign: 'center' }}>Physical Count</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => {
                                 setStockRequest(false)
@@ -230,8 +230,8 @@ export default function Index({ navigation }) {
                                 setPhysicalCount(false)
                                 setReclassifyStocks(true)
                                 setModalVisible(!modalVisible)
-                            }} style={{ backgroundColor: reclassifyStocks == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 55, borderRadius: 20, marginTop: 15 }}>
-                                <Text style={{ fontSize: 22, textAlign: 'center' }}>Reclassify Stocks</Text>
+                            }} style={{ backgroundColor: reclassifyStocks == true ? "yellow" : "#82EEF5", alignItems: 'center', justifyContent: 'center', paddingVertical: 10, paddingHorizontal: 40, borderRadius: 20, marginTop: 15 }}>
+                                <Text style={{ fontSize: 18, textAlign: 'center' }}>Reclassify Stocks</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     },
     menuText: {
         color: "#000",
-        fontSize: 23,
+        fontSize: 21,
         fontWeight: '500'
     },
 

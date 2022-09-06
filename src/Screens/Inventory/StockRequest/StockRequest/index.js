@@ -32,7 +32,7 @@ export default function Index({ navigation }) {
             </View>
             <View style={styles.container}>
                 <View style={styles.sideBarContainer}>
-                    <ScrollView>
+                    <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={{ backgroundColor: '#A1EFF4', paddingVertical: 10, paddingHorizontal: 10 }}>
                             <Text style={{ fontSize: 20, color: "#000", fontWeight: '600' }}>Filters</Text>
                         </View>
@@ -51,7 +51,7 @@ export default function Index({ navigation }) {
                                     <Image source={require('../../../../Assets/Image/calendar.png')} style={{ width: 26, height: 26, marginRight: 10 }} />
                                 </View>
                             </View>
-                            <View style={{ marginTop: 30 }}>
+                            <View style={{ marginVertical: 30, }}>
                                 <Text style={{ fontSize: 20, color: "#000", fontWeight: '600' }}>Sort</Text>
                                 <SelectDropdown
                                     data={["Status"]}
@@ -74,15 +74,15 @@ export default function Index({ navigation }) {
                                         // if data array is an array of objects then return item.property to represent item in dropdown
                                         return item
                                     }}
-                                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, }}
+                                    buttonStyle={{ backgroundColor: "#FDF5F5", marginTop: 20, justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, width: '80%' }}
                                     buttonTextStyle={{ fontSize: 20, textAlign: 'center' }}
                                     rowTextStyle={{ fontSize: 20 }}
                                     rowStyle={{ backgroundColor: 'white', paddingHorizontal: 10 }}
                                 />
-                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10 }}>Date</Text>
-                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10 }}>Transaction No.</Text>
+                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, width: '80%' }}>Date</Text>
+                                <Text style={{ fontSize: 20, color: "#000", fontWeight: '400', backgroundColor: "#FDF5F5", paddingHorizontal: 10, paddingVertical: 5, marginRight: 10, width: '80%' }}>Transaction No.</Text>
                             </View>
-                            <View style={{ marginTop: 30 }}>
+                            <View style={{ marginVertical: 30 }}>
                                 <Text style={{ fontSize: 20, color: "#000", fontWeight: '600' }}>Sort</Text>
                                 <SelectDropdown
                                     data={["Ascending"]}
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     engagementBtnText: {
-        fontSize: 15, fontWeight: '500', color: "#000", textAlign: 'center'
+        fontSize: 14, fontWeight: '500', color: "#000", textAlign: 'center'
     },
     centeredView: {
         justifyContent: "center",

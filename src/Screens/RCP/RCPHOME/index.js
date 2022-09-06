@@ -13,19 +13,19 @@ export default function Index({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.sideBarContainer}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.sideBarLogoContainer}>
                         <Image source={require("../../../Assets/Image/logo.png")} style={{ width: 150, height: 80 }} />
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox}>
-                            <AntDesign name="home" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="home" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Dashboard</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("RCPHOME")}>
-                            <AntDesign name="enviroment" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="enviroment" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>RCP</Text>
                         </TouchableOpacity>
                     </View>
@@ -33,44 +33,44 @@ export default function Index({ navigation }) {
 
                         <TouchableOpacity style={styles.menuBox}>
 
-                            <AntDesign name="calculator" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="calculator" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Transaction</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} onPress={() => navigation.navigate("InventoryDashboard")}>
-                            <Feather name="list" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Feather name="list" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Inventory</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox}>
-                            <Entypo name="credit" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Entypo name="credit" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Remitance</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <AntDesign name="carryout" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="carryout" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Booking</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <AntDesign name="car" size={30} color="black" style={{ marginRight: 15 }} />
+                            <AntDesign name="car" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>SI Delivery</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
 
                         <TouchableOpacity style={styles.menuBox} >
-                            <FontAwesome name="bar-chart-o" size={30} color="black" style={{ marginRight: 15 }} />
+                            <FontAwesome name="bar-chart-o" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Reports</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menuBox} >
-                            <Feather name="settings" size={30} color="black" style={{ marginRight: 15 }} />
+                            <Feather name="settings" size={28} color="black" style={{ marginRight: 15 }} />
                             <Text style={styles.menuText}>Settings</Text>
                         </TouchableOpacity>
                     </View>
@@ -155,7 +155,7 @@ export default function Index({ navigation }) {
                                     </View>
                                     <View style={styles.tableBoxSix}>
                                         <View style={styles.tableHead}>
-                                            <Text style={styles.tableHeadText}>Collection Status</Text>
+                                            <Text style={styles.tableHeadEngagementText}>Collection Status</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
     },
     menuText: {
         color: "#000",
-        fontSize: 23,
+        fontSize: 21,
         fontWeight: '500'
     },
 
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     dateContainerText: {
-        fontSize: 26,
+        fontSize: 23,
         fontWeight: '500',
     },
     calendarBox: {
@@ -332,11 +332,11 @@ const styles = StyleSheet.create({
         borderWidth: 1
     },
     calendarBoxTopText: {
-        fontSize: 23,
+        fontSize: 20,
         fontWeight: '600',
     },
     calendarBoxBottomText: {
-        fontSize: 17,
+        fontSize: 15,
         fontWeight: '600',
     },
     tableContainer: {

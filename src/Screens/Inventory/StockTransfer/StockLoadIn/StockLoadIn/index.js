@@ -54,7 +54,7 @@ export default function Index({ navigation }) {
               <Text style={{ fontSize: 22, fontWeight: '600', color: "#fff" }}>Stock Load-In</Text>
               <TouchableOpacity style={{ width: "10%", backgroundColor: "yellow", padding: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                 <Image source={require('../../../../../Assets/Image/sync.png')} style={{ width: 34, height: 27, marginRight: 5 }} />
-                <Text style={{ fontSize: 22, fontWeight: '700' }}>SYNC</Text>
+                <Text style={{ fontSize: 20, fontWeight: '700' }}>SYNC</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -173,7 +173,7 @@ export default function Index({ navigation }) {
                           borderBottomWidth: 1,
                           borderColor: "grey",
                           borderTopWidth: 0,
-                          width: '5%',
+                          width: '7%',
                           paddingVertical: 10,
 
                         }}>
@@ -185,7 +185,7 @@ export default function Index({ navigation }) {
                           borderBottomWidth: 1,
                           borderColor: "grey",
                           borderTopWidth: 0,
-                          width: '5%',
+                          width: '7%',
                           paddingVertical: 10,
                         }}>
                           <View style={styles.tableBody}>
@@ -197,7 +197,7 @@ export default function Index({ navigation }) {
                           borderBottomWidth: 1,
                           borderColor: "grey",
                           borderTopWidth: 0,
-                          width: '30%',
+                          width: '25%',
                           paddingVertical: 10,
                           flexDirection: 'row',
                           alignItems: 'center',
@@ -206,29 +206,29 @@ export default function Index({ navigation }) {
                           <TouchableOpacity onPress={() => setViewModal(!viewModal)} style={{
                             backgroundColor: '#1EE9F6',
                             paddingVertical: 5,
-                            paddingHorizontal: 20,
-                            marginHorizontal: 10,
+                            paddingHorizontal: 17,
+                            marginHorizontal: 5,
                             borderRadius: 10,
                           }}>
-                            <Text style={{ fontSize: 18, fontWeight: '500' }}>View</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '500' }}>View</Text>
                           </TouchableOpacity>
                           <TouchableOpacity onPress={() => setSubmitModal(!submitModal)} style={{
                             backgroundColor: '#8FF07F',
                             paddingVertical: 5,
-                            paddingHorizontal: 20,
-                            marginHorizontal: 10,
+                            paddingHorizontal: 17,
+                            marginHorizontal: 5,
                             borderRadius: 10,
                           }}>
-                            <Text style={{ fontSize: 18, fontWeight: '500' }}>Accept</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '500' }}>Accept</Text>
                           </TouchableOpacity>
                           <TouchableOpacity style={{
                             backgroundColor: '#F68787',
                             paddingVertical: 5,
-                            paddingHorizontal: 20,
-                            marginHorizontal: 10,
+                            paddingHorizontal: 17,
+                            marginHorizontal: 5,
                             borderRadius: 10,
                           }}>
-                            <Text style={{ fontSize: 18, fontWeight: '500' }}>Reject</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '500' }}>Reject</Text>
                           </TouchableOpacity>
                         </View>
                       </TouchableOpacity>
@@ -425,7 +425,7 @@ export default function Index({ navigation }) {
                   </View>
                 </View>
                 <View style={{ marginVertical: 20, justifyContent: 'center', alignItems: 'center', }}>
-                  <Text style={{ color: '#000', fontSize: 23, fontWeight: '400', width: "80%" }}>Please Check all Item before Confirming
+                  <Text style={{ color: '#000', fontSize: 20, fontWeight: '400', width: "80%", textAlign: 'center' }}>Please Check all Item before Confirming
                     this process is irreversable. </Text>
                 </View>
                 <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end', marginVertical: 40, marginHorizontal: 40, flexDirection: 'row', width: '100%' }}>
@@ -579,12 +579,12 @@ const styles = StyleSheet.create({
   },
   tableBoxSix: {
     borderTopWidth: 0,
-    width: '5%',
+    width: '7%',
     paddingVertical: 10
   },
   tableBoxSeven: {
     borderTopWidth: 0,
-    width: '30%',
+    width: '25%',
     paddingVertical: 10
   },
   engagementBtn: {

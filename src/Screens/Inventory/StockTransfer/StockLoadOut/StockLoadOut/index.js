@@ -5,16 +5,16 @@ import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 export default function Index({ navigation }) {
     const data = [
         {
-            itemCode: 480002245637,
-            tagName: '10/06/2022',
+            itemCode: 452354235,
+            tagName: 'Pack',
             description: 24562345,
             brand: 245123,
             uom: 245123,
             qty: 245123,
         },
         {
-            itemCode: 480002245637,
-            tagName: '10/06/2022',
+            itemCode: 341343345,
+            tagName: 'Pack',
             description: 24562345,
             brand: 245123,
             uom: 245123,

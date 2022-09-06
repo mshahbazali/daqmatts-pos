@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
 
     },
     modalView: {
-        marginTop: "15%",
+        marginTop: "10%",
         backgroundColor: "white",
         borderRadius: 20,
         // alignItems: "center",
